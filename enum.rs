@@ -60,6 +60,16 @@ enum Message{
     Write(String),
 }
 
+struct Point{
+    x: i32,
+    y: i32,
+}
+enum Shape {
+    Circle(f64),
+    Rectangle(u32,u32),
+    PointShape(Point),
+}
+
 fn main(){
     let today = Day::Monday;
     println!("Today is {:?}",today);
@@ -102,6 +112,15 @@ fn main(){
             println!("{}",text);
         }
     }
+
+    let p = Shape::PointShape{
+        Point {
+            x:10,
+            y:20,
+        }
+    }
+    
+
 
 
 
