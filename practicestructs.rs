@@ -19,6 +19,23 @@ struct BankAccount{
     withdraw: f64,
 
 }
+struct LaptopInventory{
+    brand: String,
+    model: String,
+    price: f64,
+}
+impl LaptopInventory{
+    fn discount(&mut self, percent:f64){
+        let discounted_amount = self.price*percent/100.0;
+        self.price -= discounted_amount;
+
+    }
+    fn display_specs(&self){
+        println!("Brand = {}",self.brand);
+        println!("Model = {}",self.model);
+        println!("Price: ${}",self.price);
+    }
+}
 impl BankAccount{
     fn display_balance(&self){
         println!("Total Balance = {}",self.balance);
@@ -106,6 +123,16 @@ fn main(){
 
     println!("Area of circle is = {:.2}",circle1.area());
     println!("Circumference of cicle = {:.2}",circle1.circumference());
+
+    let mut l1 = LaptopInventory{
+        brand: String:: from("ASUS"),
+        model: String:: from("ROG"),
+        price: 75000.87,
+    };
+
+    l1.display_specs();
+    l1.discount(15.90);
+    println!("The total price after discounbt is : {:.2}",l1.price);
 
 
 }
