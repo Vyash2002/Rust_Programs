@@ -70,6 +70,23 @@ enum Shape {
     PointShape(Point),
 }
 
+enum Courses{
+    Grs,
+    AC,
+    RM,
+}
+
+use Courses::*;
+impl Courses {
+    fn display_courses(&self){
+        match self{
+            Grs => println!("Grs is course on Systems"),
+            AC => println!("AC is a course on cryptography"),
+            RM => println!("RM is course on research methodologies"),
+
+        }
+    }
+}
 fn main(){
     let today = Day::Monday;
     println!("Today is {:?}",today);
@@ -113,12 +130,20 @@ fn main(){
         }
     }
 
-    let p = Shape::PointShape{
-        Point {
-            x:10,
-            y:20,
-        }
-    }
+    // let p = Shape::PointShape{
+    //     Point {
+    //         x:10,
+    //         y:20,
+    //     }
+    // };
+
+    let c1 = Grs;
+    let c2 = AC;
+    let c3 = RM;
+
+    c1.display_courses();
+    c2.display_courses();
+    c3.display_courses();
     
 
 

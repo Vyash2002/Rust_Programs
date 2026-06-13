@@ -75,6 +75,8 @@ impl circle{
         self.radius*2.0*3.14
     }
 }
+
+
 fn main(){
     let b1  = Book{
         title: String:: from("Linear Algebra"),
